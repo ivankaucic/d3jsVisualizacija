@@ -1,0 +1,9 @@
+https://www.educative.io/blog/d3js-tutorial
+
+
+dataset: https://www.kaggle.com/hugomathien/soccer
+
+vizualizacija: https://observablehq.com/@d3/bubble-chart
+
+bubble chart: https://bl.ocks.org/alokkshukla/3d6be4be0ef9f6977ec6718b2916d168
+		https://bl.ocks.org/mbostock/4063269

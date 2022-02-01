@@ -1,0 +1,224 @@
+{
+  "children": [
+    {
+      "Name": "Arsenal FC",
+      "Count": 4319,
+      "Position": 8,
+      "Top_scorer": "Aubameyang(22)",
+      "Top_assister": "Saka(5)",
+      "Points": 56,
+      "Won": 14,
+      "Lost": 10,
+      "Draw": 14
+    },
+    {
+      "Name": "Chelsea FC",
+      "Count": 4159,
+      "Position": 4,
+      "Top_scorer": "Abraham(15)",
+      "Top_assister": "Willian(7)",
+      "Points": 66,
+      "Won": 20,
+      "Lost": 12,
+      "Draw": 6
+    },
+    {
+      "Name": "Burnley FC",
+      "Count": 2583,
+      "Position": 10,
+      "Top_scorer": "Wood(14)",
+      "Top_assister": "Westwood(6)",
+      "Points": 54,
+      "Won": 15,
+      "Lost": 14,
+      "Draw": 9
+    },
+    {
+      "Name": "Manchester City",
+      "Count": 2074,
+      "Position": 2,
+      "Top_scorer": "Sterling(20)",
+      "Top_assister": "De Bruyne(20)",
+      "Points": 81,
+      "Won": 26,
+      "Lost": 9,
+      "Draw": 3
+    },
+    {
+      "Name": "Manchester United",
+      "Count": 1894,
+      "Position": 3,
+      "Top_scorer": "Martial/Rashford(17)",
+      "Top_assister": "Rashford(7)",
+      "Points": 66,
+      "Won": 18,
+      "Lost": 8,
+      "Draw": 12
+    },
+    {
+      "Name": "Leicester City",
+      "Count": 1809,
+      "Position": 5,
+      "Top_scorer": "Vardy(23)",
+      "Top_assister": "Barnes(8)",
+      "Points": 62,
+      "Won": 18,
+      "Lost": 12,
+      "Draw": 8
+    },
+    {
+      "Name": "Liverpool FC",
+      "Count": 1713,
+      "Position": 1,
+      "Top_scorer": "Salah(19)",
+      "Top_assister": "Alexandar-Arnold(13)",
+      "Points": 99,
+      "Won": 32,
+      "Lost": 3,
+      "Draw": 3
+    },
+    {
+      "Name": "Tottenham Hotspur",
+      "Count": 1636,
+      "Position": 6,
+      "Top_scorer": "Kane(18)",
+      "Top_assister": "Son(10)",
+      "Points": 59,
+      "Won": 16,
+      "Lost": 11,
+      "Draw": 11
+    },
+    {
+      "Name": "West Ham United",
+      "Count": 1566,
+      "Position": 16,
+      "Top_scorer": "Antonio(10)",
+      "Top_assister": "Fornals(5)",
+      "Points": 39,
+      "Won": 10,
+      "Lost": 19,
+      "Draw": 9
+    },
+    {
+      "Name": "Everton FC",
+      "Count": 1511,
+      "Position": 12,
+      "Top_scorer": "Richarlison(13)",
+      "Top_assister": "Digne(7)",
+      "Points": 49,
+      "Won": 13,
+      "Lost": 15,
+      "Draw": 10
+    },
+    {
+      "Name": "Norwich City",
+      "Count": 1489,
+      "Position": 20,
+      "Top_scorer": "Pukki(11)",
+      "Top_assister": "Buendia(7)",
+      "Points": 21,
+      "Won": 5,
+      "Lost": 27,
+      "Draw": 6
+    },
+    {
+      "Name": "Aston Villa",
+      "Count": 1487,
+      "Position": 17,
+      "Top_scorer": "Grealish(8)",
+      "Top_assister": "Grealish(5)",
+      "Points": 35,
+      "Won": 9,
+      "Lost": 21,
+      "Draw": 8
+    },
+    {
+      "Name": "Wolverhampton Wanderers",
+      "Count": 1423,
+      "Position": 7,
+      "Top_scorer": "Jimenez(17)",
+      "Top_assister": "Traore(9)",
+      "Points": 59,
+      "Won": 15,
+      "Lost": 9,
+      "Draw": 14
+    },
+    {
+      "Name": "Crystal Palace",
+      "Count": 1372,
+      "Position": 14,
+      "Top_scorer": "Ayew(9)",
+      "Top_assister": "Zaha(3)",
+      "Points": 43,
+      "Won": 11,
+      "Lost": 17,
+      "Draw": 10
+    },
+    {
+      "Name": "Southampton",
+      "Count": 1341,
+      "Position": 11,
+      "Top_scorer": "Ings(22)",
+      "Top_assister": "Redmond(4)",
+      "Points": 52,
+      "Won": 15,
+      "Lost": 16,
+      "Draw": 7
+    },
+    {
+      "Name": "Newcastle United",
+      "Count": 1331,
+      "Position": 13,
+      "Top_scorer": "Shelvey(6)",
+      "Top_assister": "Carroll(5)",
+      "Points": 44,
+      "Won": 11,
+      "Lost": 16,
+      "Draw": 11
+    },
+    {
+      "Name": "Brighton & Hove Albion",
+      "Count": 1328,
+      "Position": 15,
+      "Top_scorer": "Maupay(10)",
+      "Top_assister": "Gross(4)",
+      "Points": 41,
+      "Won": 9,
+      "Lost": 15,
+      "Draw": 14
+    },
+    {
+      "Name": "Bournemoth",
+      "Count": 1306,
+      "Position": 18,
+      "Top_scorer": "Wilson(8)",
+      "Top_assister": "Fraser(4)",
+      "Points": 34,
+      "Won": 9,
+      "Lost": 22,
+      "Draw": 7
+    },
+    {
+      "Name": "Watford",
+      "Count": 1293,
+      "Position": 19,
+      "Top_scorer": "Deeney(10)",
+      "Top_assister": "Deulofeu(5)",
+      "Points": 34,
+      "Won": 8,
+      "Lost": 20,
+      "Draw": 10
+    },
+    {
+      "Name": "Sheffield United",
+      "Count": 1273,
+      "Position": 9,
+      "Top_scorer": "McBurnie(6)",
+      "Top_assister": "Mousset(4)",
+      "Points": 54,
+      "Won": 14,
+      "Lost": 12,
+      "Draw": 12
+    }
+  ]
+}

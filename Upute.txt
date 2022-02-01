@@ -1,0 +1,2 @@
+Potrebno je u VS codu otvoriti unutar mape ovog projekta otvoriti mapu "source" i pokrenuti "Projekt.html" pomoću live server ekstenzije
+po mogućnosti.

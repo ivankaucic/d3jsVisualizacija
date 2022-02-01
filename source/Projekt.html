@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+		<title>Vizualizacija ekipa EPL-a</title>
+		<script type="text/javascript" src="https://d3js.org/d3.v4.min.js"></script>
+
+		<style type="text/css">
+			body {
+                background-color: beige;
+                }
+            h1 {
+                margin-left: 20%;
+            }
+			.tooltip{
+					width:200px;
+					background-color: rgb(168, 228, 220);
+					border: 1px solid black;
+					padding: 0px 20px;
+				}
+
+                /*barchart*/
+            .axis {
+                    font: 10px sans-serif;
+                    }
+
+            .axis path,
+            .axis line {
+                        fill: none;
+                        stroke: #000;
+                        shape-rendering: crispEdges;
+                    }
+            #my_dataviz{
+               margin-top: 0%;
+            }
+            body{
+                margin-left: 20%;
+            }
+		</style>
+</head>
+<body>
+
+	<h1>Vizualizacija engleske premijer lige</h1>
+    
+    <!--Dropdown menu-->
+    <div>
+        <h2>Što se ovdje događa?</h2>
+        <p>Ovo je vizualizacija Engleske premijer lige(EPL) u nogometu. <br>
+            Ovim kružnim grafom su prikazane zadnje dvije sezone dotične lige, tj. sezone 19/20 i 20/21. <br>
+            Klubovi koji su postizali najviše bodova imaju najveće radijuse svojih krugova, usto, prelaskom preko tih <br> krugova
+            prikazuje se statistika klubova tj. njihove najbolje strijelce i asistente za označenu sezonu. <br>
+            Sezone se mijenjaju ispod kružnog grafa pomoću <i>dropdown</i> menija.
+        </p>
+    </div>
+
+    <select id="dropdown" style="width:200px;" onchange="myFunction()">
+          <option value="" disabled selected>Select season:</option>
+          <option value="1">20/21</option>
+          <option value="2">19/20</option>
+    </select>
+	<script type="text/javascript">
+
+        var e = document.getElementById("dropdown");
+        var result = e.options[e.selectedIndex].value;
+        
+        //Koja dropdown menu opcija je izabrana
+    
+        function GetSelectedValue(){
+                var e = document.getElementById("dropdown");
+                var result = e.options[e.selectedIndex].value;
+                
+                
+            }
+
+        GetSelectedValue();    
+
+            
+        //Refresh stranice nakon promjenjene dropdown opcije
+        function myFunction(){
+
+            location.reload();
+
+        }
+
+        if(result == 0 || result == 2){
+		dataset = {"children": [{"Name":"Arsenal FC","Count":4319,"Position":8,"Top_scorer":"Aubameyang(22)","Top_assister":"Saka(5)","Points":56,"Won":14,"Lost":10,"Draw":14},
+                {"Name":"Chelsea FC","Count":4159,"Position":4,"Top_scorer":"Abraham(15)","Top_assister":"Willian(7)","Points":66,"Won":20,"Lost":12,"Draw":6},
+                {"Name":"Burnley FC","Count":2583,"Position":10,"Top_scorer":"Wood(14)","Top_assister":"Westwood(6)","Points":54,"Won":15,"Lost":14,"Draw":9},
+                {"Name":"Manchester City","Count":2074,"Position":2,"Top_scorer":"Sterling(20)","Top_assister":"De Bruyne(20)","Points":81,"Won":26,"Lost":9,"Draw":3},
+                {"Name":"Manchester United","Count":1894,"Position":3,"Top_scorer":"Martial/Rashford(17)","Top_assister":"Rashford(7)","Points":66,"Won":18,"Lost":8,"Draw":12},
+                {"Name":"Leicester City","Count":1809,"Position":5,"Top_scorer":"Vardy(23)","Top_assister":"Barnes(8)","Points":62,"Won":18,"Lost":12,"Draw":8},
+                {"Name":"Liverpool FC","Count":1713,"Position":1,"Top_scorer":"Salah(19)","Top_assister":"Alexandar-Arnold(13)","Points":99,"Won":32,"Lost":3,"Draw":3},
+                {"Name":"Tottenham Hotspur","Count":1636,"Position":6,"Top_scorer":"Kane(18)","Top_assister":"Son(10)","Points":59,"Won":16,"Lost":11,"Draw":11},
+                {"Name":"West Ham United","Count":1566,"Position":16,"Top_scorer":"Antonio(10)","Top_assister":"Fornals(5)","Points":39,"Won":10,"Lost":19,"Draw":9},
+                {"Name":"Everton FC","Count":1511,"Position":12,"Top_scorer":"Richarlison(13)","Top_assister":"Digne(7)","Points":49,"Won":13,"Lost":15,"Draw":10},
+                {"Name":"Norwich City","Count":1489,"Position":20,"Top_scorer":"Pukki(11)","Top_assister":"Buendia(7)","Points":21,"Won":5,"Lost":27,"Draw":6},
+                {"Name":"Aston Villa","Count":1487,"Position":17,"Top_scorer":"Grealish(8)","Top_assister":"Grealish(5)","Points":35,"Won":9,"Lost":21,"Draw":8},
+                {"Name":"Wolverhampton Wanderers","Count":1423,"Position":7,"Top_scorer":"Jimenez(17)","Top_assister":"Traore(9)","Points":59,"Won":15,"Lost":9,"Draw":14},
+                {"Name":"Crystal Palace","Count":1372,"Position":14,"Top_scorer":"Ayew(9)","Top_assister":"Zaha(3)","Points":43,"Won":11,"Lost":17,"Draw":10},
+                {"Name":"Southampton","Count":1341,"Position":11,"Top_scorer":"Ings(22)","Top_assister":"Redmond(4)","Points":52,"Won":15,"Lost":16,"Draw":7},
+                {"Name":"Newcastle United","Count":1331,"Position":13,"Top_scorer":"Shelvey(6)","Top_assister":"Carroll(5)","Points":44,"Won":11,"Lost":16,"Draw":11},
+                {"Name":"Brighton & Hove Albion","Count":1328,"Position":15,"Top_scorer":"Maupay(10)","Top_assister":"Gross(4)","Points":41,"Won":9,"Lost":15,"Draw":14},
+                {"Name":"Bournemoth","Count":1306,"Position":18,"Top_scorer":"Wilson(8)","Top_assister":"Fraser(4)","Points":34,"Won":9,"Lost":22,"Draw":7},
+                {"Name":"Watford","Count":1293,"Position":19,"Top_scorer":"Deeney(10)","Top_assister":"Deulofeu(5)","Points":34,"Won":8,"Lost":20,"Draw":10},
+                {"Name":"Sheffield United","Count":1273,"Position":9,"Top_scorer":"McBurnie(6)","Top_assister":"Mousset(4)","Points":54,"Won":14,"Lost":12,"Draw":12},
+                ]};
+            }
+        if(result == 1){
+            dataset = {"children": [{"Name":"Arsenal FC","Count":4319,"Position":8,"Top_scorer":"Lacazette(13)","Top_assister":"Willian(5)","Points":61,"Won":18,"Lost":13,"Draw":7},
+                {"Name":"Chelsea FC","Count":4159,"Position":4,"Top_scorer":"Jorginho(7)","Top_assister":"Werner(8)","Points":67,"Won":19,"Lost":9,"Draw":10},
+                {"Name":"Burnley FC","Count":2583,"Position":17,"Top_scorer":"Wood(12)","Top_assister":"McNeil(5)","Points":39,"Won":10,"Lost":19,"Draw":9},
+                {"Name":"Manchester City","Count":2074,"Position":1,"Top_scorer":"Gundogan(13)","Top_assister":"De Bruyne(12)","Points":86,"Won":27,"Lost":6,"Draw":5},
+                {"Name":"Manchester United","Count":1894,"Position":2,"Top_scorer":"Fernandes(18)","Top_assister":"Fernandes(11)","Points":74,"Won":21,"Lost":6,"Draw":11},
+                {"Name":"Leicester City","Count":1809,"Position":5,"Top_scorer":"Vardy(15)","Top_assister":"Vardy(9)","Points":66,"Won":20,"Lost":12,"Draw":6},
+                {"Name":"Liverpool FC","Count":1713,"Position":3,"Top_scorer":"Salah(22)","Top_assister":"Mane(7)","Points":69,"Won":20,"Lost":9,"Draw":9},
+                {"Name":"Tottenham Hotspur","Count":1636,"Position":7,"Top_scorer":"Kane(23)","Top_assister":"Kane(14)","Points":62,"Won":18,"Lost":12,"Draw":8},
+                {"Name":"West Ham United","Count":1566,"Position":6,"Top_scorer":"Antonio/Soucek(10)","Top_assister":"Cresswell(8)","Points":65,"Won":16,"Lost":11,"Draw":11},
+                {"Name":"Everton FC","Count":1511,"Position":10,"Top_scorer":"Calvert-Lewin(16)","Top_assister":"Digne(7)","Points":59,"Won":17,"Lost":13,"Draw":8},
+                {"Name":"Fulham","Count":1489,"Position":18,"Top_scorer":"Reid(5)","Top_assister":"Lookman(4)","Points":28,"Won":5,"Lost":20,"Draw":13},
+                {"Name":"Aston Villa","Count":1487,"Position":11,"Top_scorer":"Watkins(14)","Top_assister":"Grealish(10)","Points":55,"Won":16,"Lost":15,"Draw":7},
+                {"Name":"Wolverhampton Wanderers","Count":1423,"Position":13,"Top_scorer":"Neves(5)","Top_assister":"Neto(6)","Points":45,"Won":12,"Lost":17,"Draw":9},
+                {"Name":"Crystal Palace","Count":1372,"Position":14,"Top_scorer":"Zaha(11)","Top_assister":"Eze(6)","Points":44,"Won":12,"Lost":18,"Draw":8},
+                {"Name":"Southampton","Count":1341,"Position":15,"Top_scorer":"Ings(12)","Top_assister":"Ward-Prowse(7)","Points":43,"Won":12,"Lost":19,"Draw":7},
+                {"Name":"Newcastle United","Count":1331,"Position":12,"Top_scorer":"Wilson(12)","Top_assister":"Wilson(5)","Points":45,"Won":12,"Lost":17,"Draw":9},
+                {"Name":"Brighton & Hove Albion","Count":1328,"Position":16,"Top_scorer":"Maupay(8)","Top_assister":"Gross(8)","Points":41,"Won":9,"Lost":15,"Draw":14},
+                {"Name":"Leeds United","Count":1306,"Position":9,"Top_scorer":"Bamford(17)","Top_assister":"Raphinha(9)","Points":34,"Won":18,"Lost":15,"Draw":5},
+                {"Name":"West Bromich Albion","Count":1293,"Position":19,"Top_scorer":"Pereira(11)","Top_assister":"Pereira(6)","Points":26,"Won":5,"Lost":22,"Draw":11},
+                {"Name":"Sheffield United","Count":1273,"Position":20,"Top_scorer":"McGoldrick(8)","Top_assister":"Fleck(2)","Points":23,"Won":7,"Lost":29,"Draw":2},
+                ]};
+        }        
+		
+        //Bubble graf
+
+        var diameter = 600;
+        var color = d3.scaleOrdinal(d3.schemeCategory20);
+
+        var bubble = d3.pack(dataset)
+            .size([diameter, diameter])
+            .padding(1.5);
+	
+		var body = d3.select("body");
+		
+        var svg = body.append("svg")
+            .attr("width", diameter)
+            .attr("height", diameter)
+            .attr("class", "bubble");
+			
+		var tooltip = body.append("div")
+			.attr("class", "tooltip")
+			.style("position","absolute")
+			.classed("hidden", true);
+
+        var nodes = d3.hierarchy(dataset)
+            .sum(function(d) { return (d.Points*100); });
+
+        var node = svg.selectAll(".node")
+            .data(bubble(nodes).descendants())
+            .enter()
+            .filter(function(d){
+                return  !d.children
+            })
+            .append("g")
+            .attr("class", "node")
+            .attr("transform", function(d) {
+                return "translate(" + d.x + "," + d.y + ")";
+            })
+			;
+			
+
+        node.append("title")
+            .text(function(d) {
+                return d.Name + ": " + d.Points;
+            });
+
+        node.append("circle")
+            .attr("r", function(d) {
+                return d.r;
+            })
+            .style("fill", function(d,i) {
+                return color(i);
+            });
+
+        node.append("text")
+            .attr("dy", ".2em")
+            .style("text-anchor", "middle")
+            .text(function(d) {
+                return d.data.Name.substring(0, d.r / 3);
+            })
+            .attr("font-family", "sans-serif")
+            .attr("font-size", function(d){
+                return d.r/5;
+            })
+            .attr("fill", "white");
+
+        node.append("text")
+            .attr("dy", "1.3em")
+            .style("text-anchor", "middle")
+            .text(function(d) {
+                return d.data.Points;
+            })
+            .attr("font-family",  "Gill Sans", "Gill Sans MT")
+            .attr("font-size", function(d){
+                return d.r/5;
+            })
+            .attr("fill", "white");
+	
+		
+		node.on("mousemove", function(d){
+			tooltip
+			.style("left", d3.event.pageX - 50 + "px")
+			.style("top", d3.event.pageY - 70 + "px")
+			.style("display", "inline-block")
+			.html("Top scorer: " + d.data.Top_scorer + "<br>" + "Most assists: " + d.data.Top_assister);
+			})
+			.on("mouseout", function(d){ tooltip.style("display", "none");}
+			)
+		
+		
+        d3.select(self.frameElement)
+            .style("height", diameter + "px");
+        
+	</script>
+    <div>
+        <h2>Kvantitativni grafikon</h2>
+        <p>
+            Ovaj stupčasti graf prikazuje ukupan broj pobjeda, poraza i izjednačenih rezultata <br>
+            koje su ekipe imale u određenoj sezoni. <br>
+            Ukupno ima 38 utakmica u sezoni, stoga kada se zbroje svi rezultati jedne ekipe, trebalo bi biti 38 utakmica! <br>
+            Izmjena ishoda utakmica na grafu vrši se pritiskom gumbova <i>Won</i>, <i>Draw</i> i <i>Lost</i>, koji se <br>
+            nalaze ispod ovog teksta.
+        </p>
+    </div>
+    <div id="buttons">
+        <button onclick="update('Won')">Won</button>
+        <button onclick="update('Draw')">Draw</button>
+        <button onclick="update('Lost')">Lost</button>
+    </div>
+    <div id="my_dataviz"></div>
+    <script type="text/javascript">
+        //barchart
+        var e = document.getElementById("dropdown");
+        var result = e.options[e.selectedIndex].value;
+        
+        //Koja dropdown menu opcija je izabrana
+    
+        function GetSelectedValue(){
+                var e = document.getElementById("dropdown");
+                var result = e.options[e.selectedIndex].value;
+                
+            }
+
+        GetSelectedValue();              
+        //Refresh stranice nakon promjenjene dropdown opcije
+        function myFunction(){
+
+            location.reload();
+
+        }
+
+        if(result == 0 || result == 2){
+            var file = "EPL1920WLD.csv";
+            }
+        if(result == 1){
+            var file = "EPL2021WLD.csv";
+        } 
+
+        // set the dimensions and margins of the graph
+    var margin = {top: 30, right: 30, bottom: 70, left: 60},
+        width = 860 - margin.left - margin.right,
+        height = 500 - margin.top - margin.bottom;
+
+// append the svg object to the body of the page
+    var svg = d3.select("#my_dataviz")
+    .append("svg")
+        .attr("width", width + margin.left + margin.right)
+        .attr("height", height + margin.top + margin.bottom)
+    .append("g")
+        .attr("transform",
+            "translate(" + margin.left + "," + margin.top + ")");
+
+// Initialize the X axis
+    var x = d3.scaleBand()
+    .range([ 0, width ])
+    .padding(0.2);
+    var xAxis = svg.append("g")
+    .attr("transform", "translate(0," + height + ")")
+    
+    
+
+// Initialize the Y axis
+    var y = d3.scaleLinear()
+    .range([ height, 0]);
+    var yAxis = svg.append("g")
+    .attr("class", "myYaxis")
+
+    // A function that create / update the plot for a given variable:
+function update(selectedVar) {
+
+// Parse the Data
+d3.csv(file, function(data) {
+
+  // X axis
+  x.domain(data.map(function(d) { return d.Name; }))
+  xAxis.transition().duration(1000).call(d3.axisBottom(x))
+
+  // Add Y axis
+  y.domain([0, d3.max(data, function(d) { return +d[selectedVar] }) ]);
+  yAxis.transition().duration(1000).call(d3.axisLeft(y));
+
+  xAxis.selectAll("text")
+    .attr("transform", "translate(-10,0)rotate(-35)")
+    .style("text-anchor", "end");
+
+  // variable u: map data to existing bars
+  var u = svg.selectAll("rect")
+    .data(data)
+
+  // update bars
+  u
+    .enter()
+    .append("rect")
+    .merge(u)
+    .transition()
+    .duration(1000)
+      .attr("x", function(d) { return x(d.Name); })
+      .attr("y", function(d) { return y(d[selectedVar]); })
+      .attr("width", x.bandwidth())
+      .attr("height", function(d) { return height - y(d[selectedVar]); })
+      .attr("fill", "#69b3a2")
+     
+})
+
+}
+
+// Initialize the plot with the first dataset
+update('Won')
+        
+
+    </script>
+</body>
+</html>
